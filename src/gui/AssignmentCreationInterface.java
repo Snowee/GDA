@@ -38,7 +38,7 @@ public class AssignmentCreationInterface {
    private static GridBagConstraints ASSQUESTION = new GridBagConstraints() ;
    static{
 	   ASSQUESTION.insets	  = new Insets(10,10,10,10);
-	   ASSQUESTION.fill  	  = GridBagConstraints.BOTH ;
+	   ASSQUESTION.fill  	  = GridBagConstraints.HORIZONTAL ;
 	   ASSQUESTION.anchor	  = GridBagConstraints.CENTER ;
 	   ASSQUESTION.gridx 	  = 3 ;
 	   ASSQUESTION.gridy 	  = 0 ;
@@ -87,10 +87,10 @@ public class AssignmentCreationInterface {
    }
    private static GridBagConstraints ASSLABEL(int i){
 		  GridBagConstraints c = new GridBagConstraints();
-	      c.fill  	   = GridBagConstraints.BOTH ;
+	      c.fill  	   = GridBagConstraints.NONE ;
 	      c.anchor	   = GridBagConstraints.LINE_START ;
 		  c.ipadx      = 0 ;
-	      c.ipady	   = 0 ;
+	      c.ipady	   = 10 ;
 	      c.weightx    = 0;
 	      c.weighty    = 0.2/3;
 	      c.gridwidth  = 1 ;
@@ -106,7 +106,7 @@ public class AssignmentCreationInterface {
    static {
 	   GridBagConstraints c = ASSBUTTON ;
 	   c.ipadx      = 0 ;
-	   c.ipady	   = 0 ;
+	   c.ipady	    = 0 ;
 	   c.weightx    = 0;
 	   c.weighty    = 0.2/3;
 	   c.gridwidth  = 1 ;
@@ -162,7 +162,7 @@ public class AssignmentCreationInterface {
         for (int i = 0; i < answerButtons.length; i++) {
         	optionAreas[i] = new JTextArea("optie " + i);
         	optionAreas[i].setEditable(true);
-        	panel.add(optionAreas[i]);
+        	panel.add(optionAreas[i],ASSLABEL(i));
         	answerButtons[i] = new JRadioButton("");
         	answerButtons[i].setFont(new Font(Font.DIALOG, Font.BOLD, 15));
         	answerButtons[i].setActionCommand(new Integer(i).toString());
