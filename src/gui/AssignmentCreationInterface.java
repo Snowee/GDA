@@ -184,7 +184,7 @@ public class AssignmentCreationInterface {
         frame.setVisible(false);
         frame.removeAll();
         
-        return new Assignment("lolwat");
+        return new Assignment("Steve");
     }
 
 
