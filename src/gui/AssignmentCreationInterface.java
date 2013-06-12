@@ -162,6 +162,7 @@ public class AssignmentCreationInterface {
         for (int i = 0; i < answerButtons.length; i++) {
         	optionAreas[i] = new JTextArea("optie " + i);
         	optionAreas[i].setEditable(true);
+        	panel.add(optionAreas[i]);
         	answerButtons[i] = new JRadioButton("");
         	answerButtons[i].setFont(new Font(Font.DIALOG, Font.BOLD, 15));
         	answerButtons[i].setActionCommand(new Integer(i).toString());
