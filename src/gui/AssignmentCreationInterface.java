@@ -80,11 +80,28 @@ public class AssignmentCreationInterface {
       c.gridheight = 1 ;
       c.gridy = 1 + i% 2;
   	  if( i > 1)
-  		c.gridx = 1;
+  		c.gridx = 2;
   	  else
   		c.gridx = 0;
 	  return c ;
    }
+   private static GridBagConstraints ASSLABEL(int i){
+		  GridBagConstraints c = new GridBagConstraints();
+	      c.fill  	   = GridBagConstraints.BOTH ;
+	      c.anchor	   = GridBagConstraints.LINE_START ;
+		  c.ipadx      = 0 ;
+	      c.ipady	   = 0 ;
+	      c.weightx    = 0;
+	      c.weighty    = 0.2/3;
+	      c.gridwidth  = 1 ;
+	      c.gridheight = 1 ;
+	      c.gridy = 1 + i% 2;
+	  	  if( i > 1)
+	  		c.gridx = 3;
+	  	  else
+	  		c.gridx = 1;
+		  return c ;
+	   }
    private static GridBagConstraints ASSBUTTON = new GridBagConstraints() ;
    static {
 	   GridBagConstraints c = ASSBUTTON ;
@@ -141,10 +158,11 @@ public class AssignmentCreationInterface {
         panel.add(text, ASSQUESTION);
         // Construct checkboxes.
         JRadioButton[] answerButtons = new JRadioButton[4];
+        JTextArea[]	   optionAreas	 = new JTextArea[4];
         for (int i = 0; i < answerButtons.length; i++) {
-        	JTextArea optie = new JTextArea("optie " + i);
-            optie.setEditable(true);
-        	answerButtons[i] = new JRadioButton(optie);
+        	optionAreas[i] = new JTextArea("optie " + i);
+        	optionAreas[i].setEditable(true);
+        	answerButtons[i] = new JRadioButton("");
         	answerButtons[i].setFont(new Font(Font.DIALOG, Font.BOLD, 15));
         	answerButtons[i].setActionCommand(new Integer(i).toString());
         	group.add(answerButtons[i]);
